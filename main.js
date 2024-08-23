@@ -10,14 +10,38 @@ gsap.to(".box", {
 });
 
 // .textクラスの要素にアニメーションを適用
-gsap.from(".text", {
-    opacity: 0, // 初期の不透明度を0に設定
-    y: 100, // 初期位置を100px下に設定
-    duration: 1, // アニメーションの持続時間を1秒に設定
-    scrollTrigger: {
-        trigger: ".text", // アニメーションをトリガーする要素
-        start: "top bottom", // トリガーが発火するスクロール位置
-        markers: true, // デバッグ用のマーカーを表示
-        toggleActions: "play none none reverse", // スクロールに応じたアクション
-    },
+// GSAPとScrollTriggerを登録
+gsap.registerPlugin(ScrollTrigger);
+
+// matchMediaを使用してメディアクエリに基づくアニメーションを設定
+let mm = gsap.matchMedia();
+
+mm.add("(max-width: 750px)", () => {
+    // 750px以下の画面幅のときのアニメーション
+    gsap.from(".text", {
+        opacity: 0,
+        x: -100, // 左から表示
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".text",
+            start: "top 80%", // トリガーが発火するスクロール位置
+            markers: true, // デバッグ用のマーカーを表示
+            toggleActions: "play none none reverse",
+        },
+    });
+});
+
+mm.add("(min-width: 751px)", () => {
+    // 751px以上の画面幅のときのアニメーション
+    gsap.from(".text", {
+        opacity: 0,
+        y: 100, // 下から表示
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".text",
+            start: "top 80%",
+            markers: true,
+            toggleActions: "play none none reverse",
+        },
+    });
 });
