@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    margin: 700px 0;
+    padding: 100px 100px;
+    width: 500px;
+    height: 100px;
+    background-color: #f2f2f2;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+}
+
+.wrap {
+    display: grid;
+    gap: 10px;
+}
+
+.test {
+    height: 400px;
+    width: 100%;
+    background: red;
+}
