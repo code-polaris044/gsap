@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,4 +30,42 @@
     height: 400px;
     width: 100%;
     background: red;
+}
+
+body {
+    display: flex;
+}
+.side-menu {
+    position: fixed;
+    width: 200px;
+}
+.content {
+    margin-left: 220px;
+}
+.highlight {
+    background-color: yellow;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vw;
+    color: #fff;
+    background: #333;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #f00;
+}
+
+.content {
+    padding: 80px 40px;
 }
